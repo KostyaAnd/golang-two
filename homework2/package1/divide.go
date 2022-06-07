@@ -1,0 +1,27 @@
+package divide
+
+import (
+	"fmt"
+	"log"
+)
+
+func divide() {
+	var a, b int
+	fmt.Scan(&a, &b)
+	safeDivide(a, b)
+}
+
+func safeDivide(a, b int) {
+
+	defer func() {
+		if err := recover(); err != nil {
+			if fmt.Sprintf("%v", err) == "runtime error: integer divide by zero" {
+				log.Println("Введите делимое не нулевое значение")
+				return
+			}
+			log.Printf("Panic: %v", err)
+		}
+	}()
+
+	fmt.Println("Результат: ", a/b)
+}
