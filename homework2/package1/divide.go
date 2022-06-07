@@ -1,11 +1,11 @@
-package divide
+package package1
 
 import (
 	"fmt"
 	"log"
 )
 
-func main() {
+func Divide() {
 	var a, b int
 	fmt.Scan(&a, &b)
 	safeDivide(a, b)
