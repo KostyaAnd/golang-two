@@ -20,7 +20,7 @@ func safeDivide(a, b int) {
 
 	defer func() {
 		if err := recover(); err != nil {
-			if fmt.Sprintf("%v", err) == "runtime error: integer divide by zero" {
+			if fmt.Sprintf("%v", err) == "runtime error: integer darwinDivide by zero" {
 				log.Println("Введите делимое не нулевое значение")
 				return
 			}
